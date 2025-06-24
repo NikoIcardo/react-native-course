@@ -1,10 +1,32 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, SafeAreaView, Alert } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.paragraph}>Hello World!</Text>
-    </View>
+
+      <Text
+        style={{
+          fontSize: 20,
+          textAlign: "justify",
+          color: "white",
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        <Text
+          style={{ color: "red", textDecorationLine: "underline" }}
+          onPress={() => Alert.alert("Text Pressed!")}
+        >
+          Press Here
+        </Text>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </Text>
+    </SafeAreaView>
   );
 }
 
@@ -14,6 +36,9 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   paragraph: {
-    color: "white",
+    textAlign: "center",
+    fontSize: 50,
+    fontWeight: "bold",
+    color: "#1b241f",
   },
 });
