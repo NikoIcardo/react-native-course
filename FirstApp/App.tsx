@@ -1,25 +1,17 @@
-import { StyleSheet, Text, SafeAreaView, Alert } from "react-native";
+import { StyleSheet, Text, SafeAreaView, Alert, Image } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.titleText}>Hello World!</Text>
-
-      <Text style={styles.subTitleText}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-        <Text
-          style={styles.redText}
-          onPress={() => Alert.alert("Text Pressed!")}
-        >
-          Press Here
-        </Text>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </Text>
+      <Image
+        source={require("./assets/splash-icon.png")}
+        style={styles.image1}
+      />
+      <Image
+        source={{ uri: "https://picsum.photos/200/300" }}
+        style={styles.image2}
+        blurRadius={10}
+      />
     </SafeAreaView>
   );
 }
@@ -29,16 +21,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "black",
   },
-  titleText: {
-    textAlign: "center",
-    fontSize: 50,
-    fontWeight: "bold",
-    color: "#1b241f",
+  image1: {
+    height: 200,
+    width: 200,
   },
-  subTitleText: {
-    fontSize: 20,
-    textAlign: "justify",
-    color: "white",
+  image2: {
+    height: 200,
+    width: 200,
+    borderRadius: 100,
   },
-  redText: { color: "red", textDecorationLine: "underline" },
 });
