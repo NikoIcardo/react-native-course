@@ -7,6 +7,7 @@ import {
   Button,
   TouchableOpacity,
   Pressable,
+  ScrollView,
 } from "react-native";
 
 export default function App() {
@@ -14,18 +15,41 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image
-        source={require("./assets/splash-icon.png")}
-        style={styles.image1}
-      />
-      <TouchableOpacity onPress={onButtonPress}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ backgroundColor: "red" }}
+      >
         <Image
-          source={{ uri: "https://picsum.photos/200/300" }}
-          style={styles.image2}
-          blurRadius={10}
+          source={require("./assets/splash-icon.png")}
+          style={styles.image1}
         />
-      </TouchableOpacity>
-      <Button title="Press Me" onPress={onButtonPress} />
+        <Image
+          source={require("./assets/splash-icon.png")}
+          style={styles.image1}
+        />
+        <Image
+          source={require("./assets/splash-icon.png")}
+          style={styles.image1}
+        />
+        <Image
+          source={require("./assets/splash-icon.png")}
+          style={styles.image1}
+        />
+        <TouchableOpacity onPress={onButtonPress}>
+          <Image
+            source={{ uri: "https://picsum.photos/200/300" }}
+            style={styles.image2}
+            blurRadius={10}
+          />
+        </TouchableOpacity>
+        <Button title="Press Me" onPress={onButtonPress} />
+        <Image
+          source={require("./assets/splash-icon.png")}
+          style={styles.image1}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 }
