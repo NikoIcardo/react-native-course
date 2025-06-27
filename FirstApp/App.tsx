@@ -1,12 +1,17 @@
-import { StyleSheet, SafeAreaView, Alert, Text, Platform } from "react-native";
+import { StyleSheet, SafeAreaView, ActivityIndicator } from "react-native";
 
 export default function App() {
-  return <SafeAreaView style={styles.container}></SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.container}>
+      <ActivityIndicator />
+      <ActivityIndicator size={"large"} color={"green"} />
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Platform.OS === "android" ? "aqua" : "grey",
+    justifyContent: "center",
   },
 });
